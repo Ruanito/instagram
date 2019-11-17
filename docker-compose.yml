@@ -8,3 +8,15 @@ services:
       - .:/instagram
     ports:
       - "3000:3000"
+    depends_on:
+    - db
+
+  db:
+    image: 'postgres'
+    volumes:
+    - '/data/postgres'
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
