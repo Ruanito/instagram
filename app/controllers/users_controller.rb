@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @posts = Post.all
+    @posts = Post.where(user_id: session[:user_id])
   end
 
   # GET /users/1
