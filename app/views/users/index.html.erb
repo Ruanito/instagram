@@ -22,22 +22,15 @@
 
 <br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Message</th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="index-container">
+  <section class="grid grid-auto-flow">
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.message %></td>
-        <td><%= image_tag post.image if post.image.attached? %></td>
-      </tr>
+      <item>
+        <%= image_tag post.image, size: '293' if post.image.attached? %>
+      </item>
     <% end %>
-  </tbody>
-</table>
+  </section>
+</div>
 
 <br>
 
